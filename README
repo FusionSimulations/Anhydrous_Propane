@@ -1,0 +1,16 @@
++++++maps_sprayTypes.xml+++++
+***Map with no maps_sprayTypes.xml***
+Copy all lines
+
+***Map with existing maps_sprayTypes.xml***
+copy <sprayTypes> to </sprayTypes> and paste in within the <maps> section
+
+
+
++++++maps_fillTypes.xml+++++
+***Map has NO maps_fillTypes.xml***
+Copy ALL lines of this file if your map currently has NO maps_fillTypes.xml file.
+
+***Map has existing maps_fillTypes.xml***
+Copy the from <fillType> to </fillType> for each respective fill type you are adding, and paste into the existing map XML file.  
+Then add in the filltype name to the <fillTypeCategories> and <fillTypeSounds> sections as appropriate
