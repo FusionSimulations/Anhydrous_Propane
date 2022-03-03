@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<map>
+    <sprayTypes>
+		<sprayType name="ANHYDROUS"		   litersPerSecond="0.0300" type="FERTILIZER"  groundType="1" />
+    </sprayTypes>
+</map>
