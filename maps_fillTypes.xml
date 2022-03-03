@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../shared/xml/schema/fillTypes.xsd">
+
+    <fillTypes>
+		<fillType name="ANHYDROUS" title="Anhydrous Ammonia" showOnPriceTable="true" unitShort="$l10n_unit_literShort">
+			<physics massPerLiter="0.90" maxPhysicalSurfaceAngle="0" />
+			<economy pricePerLiter="0.10" />
+			<image hud="huds/hud_fill_anhydrous.png" hudSmall="huds/hud_fill_anhydrous_sml.png" />
+		</fillType>
+		<fillType name="propane" title="Propane" showOnPriceTable="true" unitShort="$l10n_unit_literShort">
+            <physics massPerLiter="0.90" maxPhysicalSurfaceAngle="0" />
+            <economy pricePerLiter="0.02" />
+            <image hud="huds/hud_fill_propane.png" hudSmall="huds/hud_fill_propane_sml.png" />			
+			<pallet filename="$data/objects/pallets/fillablePallet/fillablePallet.xml" />
+        </fillType>	
+        <fillType name="MAIZE2" title="Dry_Corn" showOnPriceTable="true" unitShort="$l10n_unit_literShort">
+            <physics massPerLiter="0.80" maxPhysicalSurfaceAngle="15" />
+            <economy pricePerLiter="0.380">
+                <factors>
+                    <factor period="1"  value="1.12" />
+                    <factor period="2"  value="1.08" />
+                    <factor period="3"  value="1.04" />
+                    <factor period="4"  value="1.14" />
+                    <factor period="5"  value="1.31" />
+                    <factor period="6"  value="0.98" />
+                    <factor period="7"  value="0.88" />
+                    <factor period="8"  value="0.71" />
+                    <factor period="9"  value="0.61" />
+                    <factor period="10" value="0.92" />
+                    <factor period="11" value="1.33" />
+                    <factor period="12" value="0.98" />
+                </factors>
+            </economy>
+            <effects fruitSmokeColor="0.3324 0.2022 0.0873 1.0000"/>
+            <image      hud     ="huds/hud_fill_dry_maize2.png" />
+            <pallet     filename="$data/objects/pallets/fillablePallet/fillablePallet.xml" />
+            <textures   diffuse ="$data/fillPlanes/maize_diffuse.png"
+                        normal  ="$data/fillPlanes/maize_normal.png"
+                        specular="$data/fillPlanes/maize_specular.png"
+                        distance="$data/fillPlanes/distance/maizeDistance_diffuse.png" />
+        </fillType>
+    </fillTypes>
+
+    <fillTypeCategories>
+        <fillTypeCategory name="BULK" >MAIZE2 WHEAT BARLEY </fillTypeCategory>
+        <fillTypeCategory name="LIQUID" >MILK WATER DIESEL DEF ANHYDROUS PROPANE</fillTypeCategory>
+        <fillTypeCategory name="SPRAYER" >LIQUIDFERTILIZER HERBICIDE ANHYDROUS</fillTypeCategory>
+        <fillTypeCategory name="AUGERWAGON" >MAIZE2</fillTypeCategory>
+        <fillTypeCategory name="TRAINWAGON" >MAIZE2</fillTypeCategory>
+        <fillTypeCategory name="SHOVEL" >MAIZE2</fillTypeCategory>
+        <fillTypeCategory name="FARMSILO" >MAIZE2</fillTypeCategory>
+        <fillTypeCategory name="LOADINGVEHICLE">MAIZE2</fillTypeCategory>
+    </fillTypeCategories>
+
+    <fillTypeSounds>
+        <fillTypeSound isDefault="true">
+            <sound template="DEFAULT_SILO_FILL"/>
+        </fillTypeSound>
+
+        <fillTypeSound fillTypes="PROPANE METHANE">
+            <sound template="methaneFill"/>
+        </fillTypeSound>
+
+        <fillTypeSound fillTypes="MAIZE2 MAIZE PIGFOOD">
+            <sound template="grainLargeFill"/>
+        </fillTypeSound>
+		
+		<fillTypeSound fillTypes="ANHYDROUS">
+            <sound template="DEFAULT_REFUEL_SOUND"/>
+        </fillTypeSound> 
+		
+    </fillTypeSounds>
+</map>
